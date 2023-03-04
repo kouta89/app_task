@@ -1,0 +1,2 @@
+$('#favorite_buttons_<%= [@book.id,@book_comment.id] %>').html('<%= j(
+render "book_comments/book_comment", book: @book, book_comment: @book_comment) %>')
