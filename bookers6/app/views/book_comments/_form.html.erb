@@ -1,0 +1,7 @@
+<!--コメントフォーム-->
+<%= form_with(model:[book,book_comment],local: false) do |f| %>
+  <!--エラーメッセージ-->
+  <%= render 'layouts/errors', obj: book %>
+  <%= f.text_area :comment,rows:'5' ,placeholder: "コメントをここに" %>
+  <%= f.submit "送信" %>
+<% end %>
