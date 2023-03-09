@@ -16,9 +16,8 @@ class BooksController < ApplicationController
     else
       @books = Book.all
     end
-
+    
     @book = Book.new
-    @books = Book.all
   end
 
   def create
