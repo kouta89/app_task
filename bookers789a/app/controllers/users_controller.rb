@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :ensure_correct_user, only: [:show,:update,:edit]
+  before_action :ensure_correct_user, only: [:update,:edit]
+  before_action :authenticate_user!, only: [:show]
 
   def show
     @user = User.find(params[:id])
@@ -14,7 +15,8 @@ class UsersController < ApplicationController
           end
         end
       end
-      unless @is_room
+      if @is_room
+      else
         @room = Room.new
         @entry = Entry.new
       end
